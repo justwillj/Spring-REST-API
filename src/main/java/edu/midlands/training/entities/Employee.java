@@ -3,36 +3,45 @@ package edu.midlands.training.entities;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Employee {
-
+  private static AtomicInteger ID_GENERATOR  = new AtomicInteger(1);
   private int employeeId = ID_GENERATOR.getAndIncrement();
 
   private String firstName;
 
   private String lastName;
 
-  private String age;
+  private String title;
 
   private boolean isActive;
+
+  private int tenure;
 
 
   public Employee() {
   }
 
-  private static AtomicInteger ID_GENERATOR  = new AtomicInteger(1);
-  public Employee(String firstName, String lastName, String age,
-      boolean isActive) {
+  public Employee(String firstName, String lastName, String title, boolean isActive,
+      int tenure) {
     this.firstName = firstName;
     this.lastName = lastName;
-    this.age = age;
+    this.title = title;
     this.isActive = isActive;
-
+    this.tenure = tenure;
   }
 
-  public Integer getEmployeeId() {
+  public static AtomicInteger getIdGenerator() {
+    return ID_GENERATOR;
+  }
+
+  public static void setIdGenerator(AtomicInteger idGenerator) {
+    ID_GENERATOR = idGenerator;
+  }
+
+  public int getEmployeeId() {
     return employeeId;
   }
 
-  public void setEmployeeId(Integer employeeId) {
+  public void setEmployeeId(int employeeId) {
     this.employeeId = employeeId;
   }
 
@@ -52,12 +61,12 @@ public class Employee {
     this.lastName = lastName;
   }
 
-  public String getAge() {
-    return age;
+  public String getTitle() {
+    return title;
   }
 
-  public void setAge(String age) {
-    this.age = age;
+  public void setTitle(String title) {
+    this.title = title;
   }
 
   public boolean isActive() {
@@ -68,14 +77,23 @@ public class Employee {
     isActive = active;
   }
 
+  public int getTenure() {
+    return tenure;
+  }
+
+  public void setTenure(int tenure) {
+    this.tenure = tenure;
+  }
+
   @Override
   public String toString() {
     return "Employee{" +
         "employeeId=" + employeeId +
         ", firstName='" + firstName + '\'' +
         ", lastName='" + lastName + '\'' +
-        ", age='" + age + '\'' +
+        ", title='" + title + '\'' +
         ", isActive=" + isActive +
+        ", tenure=" + tenure +
         '}';
   }
 }

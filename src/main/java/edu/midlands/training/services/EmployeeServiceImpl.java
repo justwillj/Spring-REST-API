@@ -52,4 +52,19 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     return null;
   }
+
+  @Override
+  public Employee updateEmployee(int id, Employee employee) {
+    Employee oldEmployee = getEmployeeById(id);
+    for (Employee e: employeeList) {
+      if(e.getEmployeeId() == id){
+        int index = employeeList.indexOf(e);
+        oldEmployee = employee;
+        employeeList.set(index,oldEmployee);
+      }
+    }
+    return oldEmployee;
+  }
+
+
 }

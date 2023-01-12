@@ -13,4 +13,10 @@ public class EmployeeServiceImpl implements EmployeeService {
   public List<Employee> getEmployee() {
     return employeeList;
   }
+
+  @Override
+  public Employee addEmployee(Employee employee) {
+    employeeList.add(employee);
+    return employee;
+  }
 }

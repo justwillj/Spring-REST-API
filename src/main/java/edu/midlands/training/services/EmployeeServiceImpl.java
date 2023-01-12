@@ -66,5 +66,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     return oldEmployee;
   }
 
+  @Override
+  public void deleteEmployee(Integer id) {
+    Employee oldEmployee = getEmployeeById(id);
+    employeeList.remove(oldEmployee);
+  }
+
 
 }

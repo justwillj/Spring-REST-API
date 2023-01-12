@@ -1,8 +1,10 @@
 package edu.midlands.training.entities;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public class Employee {
 
-  private Integer employeeId;
+  private int employeeId = ID_GENERATOR.getAndIncrement();
 
   private String firstName;
 
@@ -16,13 +18,14 @@ public class Employee {
   public Employee() {
   }
 
-  public Employee(Integer employeeId, String firstName, String lastName, String age,
+  private static AtomicInteger ID_GENERATOR  = new AtomicInteger(1);
+  public Employee(String firstName, String lastName, String age,
       boolean isActive) {
-    this.employeeId = employeeId;
     this.firstName = firstName;
     this.lastName = lastName;
     this.age = age;
     this.isActive = isActive;
+
   }
 
   public Integer getEmployeeId() {

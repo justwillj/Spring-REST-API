@@ -14,4 +14,6 @@ public interface EmployeeService {
   List<Employee> getActiveEmployees(boolean activeStatus);
 
   Employee getEmployeeById(int id);
+
+  Employee updateEmployee(int id, Employee employee);
 }

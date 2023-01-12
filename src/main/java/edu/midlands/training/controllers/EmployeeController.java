@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,8 +24,7 @@ public class EmployeeController {
   }
 
 
-    @GetMapping("/employees/{id}")
-    public Employee getEmpolyeeByID(@PathVariable int id){
+  @GetMapping("/employees/{id}") public Employee getEmpolyeeByID(@PathVariable int id) {
     return employeeService.getEmployeeById(id);
   }
 
@@ -36,6 +36,11 @@ public class EmployeeController {
   @PostMapping("/employees")
   public Employee addEmployee(@RequestBody Employee employee){
     return employeeService.addEmployee(employee);
+  }
+
+  @PutMapping("/employees/{id}")
+  public Employee updateEmployee(@PathVariable int id, @RequestBody Employee employee){
+    return employeeService.updateEmployee(id,employee);
   }
 
 }

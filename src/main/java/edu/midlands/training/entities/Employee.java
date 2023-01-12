@@ -65,5 +65,14 @@ public class Employee {
     isActive = active;
   }
 
-
+  @Override
+  public String toString() {
+    return "Employee{" +
+        "employeeId=" + employeeId +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", age='" + age + '\'' +
+        ", isActive=" + isActive +
+        '}';
+  }
 }

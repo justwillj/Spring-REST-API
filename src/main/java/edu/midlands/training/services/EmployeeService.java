@@ -8,4 +8,10 @@ public interface EmployeeService {
   List<Employee> getEmployee();
 
   Employee addEmployee(Employee employee);
+
+  List<Employee> isActive(boolean status);
+
+  List<Employee> getActiveEmployees(boolean activeStatus);
+
+  Employee getEmployeeById(int id);
 }

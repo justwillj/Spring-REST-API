@@ -6,6 +6,7 @@ import edu.midlands.training.services.EmployeeService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,17 @@ public class EmployeeController {
   @GetMapping("/employees")
   public List<Employee> getEmployees(){
     return employeeService.getEmployee();
+  }
+
+
+    @GetMapping("/employees/{id}")
+    public Employee getEmpolyeeByID(@PathVariable int id){
+    return employeeService.getEmployeeById(id);
+  }
+
+  @GetMapping("/employees?isActive={status}")
+  public List<Employee> getActiveEmployees(@PathVariable boolean activeStatus){
+    return employeeService.getActiveEmployees(activeStatus);
   }
 
   @PostMapping("/employees")

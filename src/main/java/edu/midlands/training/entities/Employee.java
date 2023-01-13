@@ -41,8 +41,8 @@ public class Employee {
     return employeeId;
   }
 
-  public void setEmployeeId(int employeeId) {
-    this.employeeId = String.valueOf(employeeId);
+  public void setEmployeeId(String employeeId) {
+    this.employeeId = employeeId;
   }
 
   public String getFirstName() {

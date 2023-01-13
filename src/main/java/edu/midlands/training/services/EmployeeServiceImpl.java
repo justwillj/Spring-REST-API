@@ -3,12 +3,17 @@ package edu.midlands.training.services;
 import edu.midlands.training.entities.Employee;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
 
   List<Employee> employeeList =new ArrayList<>();
+  Employee employee1 = new Employee("fsdf","Test","TEST",true,5);
+
+
+
   @Override
   public List<Employee> getEmployee() {
     return employeeList;
@@ -46,7 +51,7 @@ public class EmployeeServiceImpl implements EmployeeService {
   @Override
   public Employee getEmployeeById(int id) {
     for (Employee e: employeeList) {
-      if(e.getEmployeeId() == id){
+      if(Objects.equals(e.getEmployeeId(), String.valueOf(id))){
         return e;
       }
     }
@@ -57,7 +62,7 @@ public class EmployeeServiceImpl implements EmployeeService {
   public Employee updateEmployee(int id, Employee employee) {
     Employee oldEmployee = getEmployeeById(id);
     for (Employee e: employeeList) {
-      if(e.getEmployeeId() == id){
+      if(Objects.equals(e.getEmployeeId(), String.valueOf(id))){
         int index = employeeList.indexOf(e);
         oldEmployee = employee;
         employeeList.set(index,oldEmployee);
@@ -70,6 +75,11 @@ public class EmployeeServiceImpl implements EmployeeService {
   public void deleteEmployee(Integer id) {
     Employee oldEmployee = getEmployeeById(id);
     employeeList.remove(oldEmployee);
+  }
+
+  @Override
+  public List<Employee> listOfEmployees() {
+    return employeeList;
   }
 
 

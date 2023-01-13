@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class Employee {
   private static AtomicInteger ID_GENERATOR  = new AtomicInteger(1);
-  private int employeeId = ID_GENERATOR.getAndIncrement();
+  private String employeeId = String.valueOf(ID_GENERATOR.getAndIncrement());
 
   private String firstName;
 
@@ -37,12 +37,12 @@ public class Employee {
     ID_GENERATOR = idGenerator;
   }
 
-  public int getEmployeeId() {
+  public String getEmployeeId() {
     return employeeId;
   }
 
   public void setEmployeeId(int employeeId) {
-    this.employeeId = employeeId;
+    this.employeeId = String.valueOf(employeeId);
   }
 
   public String getFirstName() {

@@ -19,6 +19,10 @@ public class EmployeeController {
   @Autowired
   private EmployeeService employeeService;
 
+  @GetMapping("/")
+  public List<Employee>listOfEmployees (){
+    return employeeService.listOfEmployees();
+  }
   @GetMapping("/employees")
   public List<Employee> getEmployees(){
     return employeeService.getEmployee();
@@ -48,5 +52,4 @@ public class EmployeeController {
   public void deleteEmployee(@PathVariable Integer id){
     employeeService.deleteEmployee(id);
   }
-
 }

@@ -12,7 +12,7 @@ public class Employee {
 
   private String title;
 
-  private boolean isActive;
+  private Boolean isActive;
 
   private int tenure;
 
@@ -73,7 +73,7 @@ public class Employee {
     return isActive;
   }
 
-  public void setActive(boolean active) {
+  public void setActive(Boolean active) {
     isActive = active;
   }
 

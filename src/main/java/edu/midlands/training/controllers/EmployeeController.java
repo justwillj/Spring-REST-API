@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,21 +25,22 @@ public class EmployeeController {
   public List<Employee>listOfEmployees (){
     return employeeService.listOfEmployees();
   }
+
   @GetMapping("/employees")
-  public List<Employee> getEmployees(){
-    return employeeService.getEmployee();
+  public List<Employee> getEmployees(@RequestParam (value = "active",required = false) Boolean isActive){
+    return employeeService.getEmployees(isActive);
+
   }
-
-
-  @GetMapping("/employees/{id}") public Employee getEmpolyeeByID(@PathVariable int id) {
+  @GetMapping("/employees/{id}") public Employee getEmployeeByID(@PathVariable int id) {
     return employeeService.getEmployeeById(id);
   }
 
-  @GetMapping("/employees?isActive={status}")
-  public List<Employee> getActiveEmployees(@PathVariable boolean activeStatus){
-    return employeeService.getActiveEmployees(activeStatus);
+  /*
+  @GetMapping("/employees")
+  public List<Employee> getActiveEmployees(@RequestParam (value = "active") boolean isActive){
+    return employeeService.getActiveEmployees(isActive);
   }
-
+*/
   @PostMapping("/employees")
   public Employee addEmployee(@RequestBody Employee employee){
     return employeeService.addEmployee(employee);

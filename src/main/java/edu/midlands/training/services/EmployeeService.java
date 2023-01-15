@@ -5,13 +5,11 @@ import java.util.List;
 
 public interface EmployeeService {
 
-  List<Employee> getEmployee();
+  List<Employee> getEmployees(Boolean isActive);
 
   Employee addEmployee(Employee employee);
 
-  List<Employee> isActive(boolean status);
-
-  List<Employee> getActiveEmployees(boolean activeStatus);
+  List<Employee> getActiveEmployees(boolean isActive);
 
   Employee getEmployeeById(int id);
 

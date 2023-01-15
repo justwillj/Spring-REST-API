@@ -17,5 +17,4 @@ public interface EmployeeService {
 
   void deleteEmployee(Integer id);
 
-  List<Employee> listOfEmployees();
 }

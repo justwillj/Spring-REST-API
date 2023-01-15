@@ -82,15 +82,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     employeeList.remove(oldEmployee);
   }
 
-  @Override
-  public List<Employee> listOfEmployees() {
-    employeeList.add(employee1);
-    employeeList.add(employee2);
-    employeeList.add(employee3);
-    employeeList.add(employee4);
-    employeeList.add(employee5);
-    return employeeList;
-  }
+
 
 
 }

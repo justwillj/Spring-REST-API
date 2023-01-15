@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
-  Employee employee1 = new Employee("fsdf","Test","TEST",true,5);
-  Employee employee2 = new Employee("fsdf","Test","TEST",false,5);
-  Employee employee3 = new Employee("fsdf","Test","TEST",true,5);
-  Employee employee4 = new Employee("fsdf","Test","TEST",false,10);
-  Employee employee5 = new Employee("fsdf","Test","TEST",true,5);
+  Employee employee1 = new Employee("James","Smith","Research Aide",true,3);
+  Employee employee2 = new Employee("Robert","Williams","Developer",false,11);
+  Employee employee3 = new Employee("Maria","Brown","Research Aide",true,2);
+  Employee employee4 = new Employee("Mary","Jones","Developer",false,10);
+  Employee employee5 = new Employee("David","Johnson","Manager",true,20);
 
   List<Employee> employeeList =new ArrayList<>(List.of(employee1,employee2,employee3,employee4,employee5));
 

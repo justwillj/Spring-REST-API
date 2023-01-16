@@ -1,6 +1,7 @@
 package edu.midlands.training.services;
 
 import edu.midlands.training.entities.Employee;
+import edu.midlands.training.exceptions.EmployeeNotFound;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IllegalFormatCodePointException;
@@ -60,7 +61,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return e;
       }
     }
-    return null;
+    throw new EmployeeNotFound();
   }
 
   @Override

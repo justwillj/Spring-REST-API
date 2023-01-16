@@ -66,20 +66,22 @@ public class EmployeeServiceImpl implements EmployeeService {
 
   @Override
   public Employee updateEmployee(int id, Employee employee) {
-    Employee oldEmployee = getEmployeeById(id);
     for (Employee e: employeeList) {
       if(Objects.equals(e.getEmployeeId(), String.valueOf(id))){
         int index = employeeList.indexOf(e);
-        oldEmployee = employee;
-        employeeList.set(index,oldEmployee);
+        employeeList.set(index,employee);
+        return employee;
       }
     }
-    return oldEmployee;
+    throw new EmployeeNotFound();
   }
 
   @Override
   public void deleteEmployee(Integer id) {
     Employee oldEmployee = getEmployeeById(id);
+    if (!Objects.equals(oldEmployee.getEmployeeId(), String.valueOf(id))){
+      throw new EmployeeNotFound();
+    }
     employeeList.remove(oldEmployee);
   }
 

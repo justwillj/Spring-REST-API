@@ -2,6 +2,7 @@ package edu.midlands.training.entities;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
+
 public class Employee {
   private static AtomicInteger ID_GENERATOR  = new AtomicInteger(1);
   private String employeeId = String.valueOf(ID_GENERATOR.getAndIncrement());

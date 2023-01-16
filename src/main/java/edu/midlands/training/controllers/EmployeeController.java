@@ -21,11 +21,6 @@ public class EmployeeController {
   @Autowired
   private EmployeeService employeeService;
 
-  @GetMapping("/")
-  public List<Employee>listOfEmployees (){
-    return employeeService.listOfEmployees();
-  }
-
   @GetMapping("/employees")
   public List<Employee> getEmployees(@RequestParam (value = "active",required = false) Boolean isActive){
     return employeeService.getEmployees(isActive);
@@ -35,12 +30,6 @@ public class EmployeeController {
     return employeeService.getEmployeeById(id);
   }
 
-  /*
-  @GetMapping("/employees")
-  public List<Employee> getActiveEmployees(@RequestParam (value = "active") boolean isActive){
-    return employeeService.getActiveEmployees(isActive);
-  }
-*/
   @PostMapping("/employees")
   public Employee addEmployee(@RequestBody Employee employee){
     return employeeService.addEmployee(employee);

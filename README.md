@@ -1,7 +1,8 @@
 # Spring REST API Exercise v1
 
-Intermediate Programming Project is a set of different logical problems with proper testing included to make sure it works as intended. There are a total of 4 different methods with each of them having muitlpe different types of unit testing. 
+Spring REST API Exercise v1 is a backend application using the Spring Boot framework.
 
 ## Postman
 
 LINK GOES HERE
+https://api.postman.com/collections/25273572-f81fb114-799d-43b1-9266-657e07c5d94a?access_key=PMAT-01GPWPPQBQQY40K9SBKDNY0G8E
